@@ -21,7 +21,7 @@ stages:
     - src\Pipeline\s3_RemoveOutliers.py
     outs:
     - Data\03_noOutlierData\noOutlierDataFile.csv
-  
+
   EncodingScalling:
     cmd: python src\Pipeline\s4_Encoding.py
     deps:
@@ -32,3 +32,10 @@ stages:
     - Data\04_encoded_Data\X_train.csv
     - Data\04_encoded_Data\y_test.csv
     - Data\04_encoded_Data\y_train.csv
+    
+  ModelTraining:
+    cmd: python src\Pipeline\s5_Model_Training.py
+    deps:
+    - Data\04_encoded_Data\X_train.csv
+    - Data\04_encoded_Data\y_train.csv
+    - src\Pipeline\s5_Model_Training.py

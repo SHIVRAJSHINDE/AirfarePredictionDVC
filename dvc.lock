@@ -21,8 +21,8 @@ stages:
       size: 1089598
     - path: src\Pipeline\s2_Data_Cleaning.py
       hash: md5
-      md5: 97b0eda921c6bc640201d2e2a419b831
-      size: 4873
+      md5: e88fe567325fbbda737df44b6c085cad
+      size: 4881
     outs:
     - path: Data\02_CleanedData\CleanedData.csv
       hash: md5
@@ -72,3 +72,18 @@ stages:
       hash: md5
       md5: 5ffcfc1afd37b9f7510566454369c82f
       size: 51380
+  ModelTraining:
+    cmd: python src\Pipeline\s5_Model_Training.py
+    deps:
+    - path: Data\04_encoded_Data\X_train.csv
+      hash: md5
+      md5: d6b265c2007e98c587ab63702a83a48b
+      size: 3893600
+    - path: Data\04_encoded_Data\y_train.csv
+      hash: md5
+      md5: 5ffcfc1afd37b9f7510566454369c82f
+      size: 51380
+    - path: src\Pipeline\s5_Model_Training.py
+      hash: md5
+      md5: e270827b04b0bfca4b9a7b3c91d649a5
+      size: 5417

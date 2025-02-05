@@ -87,11 +87,11 @@ class DataCleaningClass:
 
 # Example usage:
 if __name__ == "__main__":
-    file_path = "Data\\01_RawData\\Airline.csv"
+    raw_file_path = "Data\\01_RawData\\Airline.csv"
     cleaned_data_path = "Data\\02_CleanedData\\CleanedData.csv"
     
     # Create an instance of DataCleaningClass
-    data_cleaning_obj = DataCleaningClass(file_path)
+    data_cleaning_obj = DataCleaningClass(raw_file_path)
 
     # Apply the cleaning functions
     data_cleaning_obj.clean_total_stops()
